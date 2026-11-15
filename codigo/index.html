@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- Protótipo Guia do Investidor (S1). Tela: Página inicial. RFs atendidos: RF01 (acesso). HTML e CSS; app.js só para efeitos visuais opcionais, sem lógica. -->
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página inicial — Guia do Investidor</title><link rel="stylesheet" href="style.css"></head>
+<body><a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header><a class="brand" href="index.html"><img src="logo.svg" alt="" width="34" height="34"><span>Guia do <b>Investidor</b></span></a><nav class="nav-pub" aria-label="Principal"><ul><li><a href="index.html">Início</a></li><li><a href="01-login.html">Entrar</a></li><li><a href="02-cadastro.html" class="cta">Criar conta</a></li></ul></nav></header>
+<main id="conteudo"><p class="rf">RFs desta tela: RF01 (acesso)</p>
+<section class="hero card"><h1>Descubra seu perfil e organize seus <em>investimentos</em></h1>
+<p>Responda um questionário curto e veja uma sugestão de carteira diversificada, com gráfico e valores. Conteúdo educacional, para quem está começando ou quer organizar o que já tem.</p>
+<a class="btn" href="02-cadastro.html">Criar conta</a><a class="btn sec" href="01-login.html">Já tenho conta: entrar</a></section>
+<section aria-labelledby="b"><h2 id="b">Três ideias para começar</h2><div class="cols">
+<div class="mini"><h3>Risco e retorno</h3><p>Em geral, quanto maior o retorno possível, maior a oscilação e o risco de perda. Não existe ganho alto sem risco.</p></div>
+<div class="mini"><h3>Diversificação</h3><p>Dividir o dinheiro entre classes diferentes reduz o impacto de uma delas ir mal. É a ideia central da carteira do Guia.</p></div>
+<div class="mini"><h3>Objetivo e prazo</h3><p>Dinheiro para daqui a um ano pede mais segurança que dinheiro para a aposentadoria. O prazo muda a carteira.</p></div></div></section>
+<section aria-labelledby="c"><h2 id="c">As classes de ativos usadas no Guia</h2>
+<details><summary>Renda fixa pós-fixada (Selic/CDI)<span class="tag">Risco: baixo</span></summary><p>Aplicações cujo rendimento acompanha a taxa básica de juros (Selic) ou o CDI. Costumam oscilar pouco e servem de base de segurança.</p></details>
+<details><summary>Renda fixa atrelada à inflação<span class="tag">Risco: baixo a médio</span></summary><p>O rendimento combina uma taxa definida com um índice de inflação, para proteger o poder de compra no longo prazo. O valor pode variar se for resgatado antes do vencimento.</p></details>
+<details><summary>Fundos imobiliários<span class="tag">Risco: médio</span></summary><p>Fundos que investem em imóveis ou em papéis do setor imobiliário. As cotas são negociadas na bolsa e costumam distribuir rendimentos periódicos, mas o preço da cota oscila.</p></details>
+<details><summary>Ações brasileiras e a bolsa<span class="tag">Risco: alto</span></summary><p>Ação é uma pequena parte de uma empresa. As ações são negociadas na bolsa de valores (a B3, no Brasil), e o preço sobe e desce todos os dias. Tende a fazer mais sentido para prazos longos.</p></details>
+<details><summary>Investimentos no exterior<span class="tag">Risco: médio a alto</span></summary><p>Ativos de outras economias, que ajudam a diversificar, mas sofrem também com a variação do câmbio (o valor do dólar, por exemplo).</p></details>
+<p class="sub">O Guia sugere apenas classes de ativos. Não indica ativos específicos, não mostra cotações e não executa ordens.</p></section>
+<section aria-labelledby="d"><h2 id="d">Como funciona</h2><ol class="passos"><li><strong>Crie sua conta</strong><br>Nome, e-mail e senha.</li><li><strong>Responda o questionário</strong><br>8 perguntas, cerca de 3 minutos.</li><li><strong>Informe seu objetivo</strong><br>Aporte mensal e prazo.</li><li><strong>Veja sua carteira</strong><br>Gráfico, percentuais e valores.</li></ol>
+<a class="btn" href="02-cadastro.html">Começar agora</a></section></main>
+<footer>Protótipo S1 · Equipe GuiaInvest · DSW — UFMA · Dados de exemplo fixos.</footer><script src="app.js" defer></script></body></html>
