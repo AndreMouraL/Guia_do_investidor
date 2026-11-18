@@ -96,3 +96,10 @@ details p{margin:.5rem 0 .2rem;color:var(--mut)}
 .hero h1{text-shadow:0 2px 12px #000}
 .hero p{color:#e2e2e2}
 @media(max-width:480px){.hero{padding:2rem 1.1rem;min-height:0}}
+/* Sprint 2: botões de formulário, estados ocultos e saudação no menu */
+button.btn{font-family:inherit;cursor:pointer}
+[hidden]{display:none!important}
+.ola{display:inline-block;padding:.4rem .6rem;color:var(--or2);font-weight:700;font-size:.95rem}
+.ola:empty{display:none}
+.prev{font-size:.9rem}
+.donut b strong{font-size:1rem}
