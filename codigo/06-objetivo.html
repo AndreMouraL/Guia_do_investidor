@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<!-- Protótipo Guia do Investidor (S1). Tela: Objetivo, aporte e prazo. RFs atendidos: RF04. HTML e CSS; app.js só para efeitos visuais opcionais, sem lógica. -->
+<!-- Guia do Investidor — Sprint 2. Tela: Objetivo, aporte e prazo (com estado de erro). RFs atendidos: RF04. Lógica em JavaScript puro, dados no localStorage. -->
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Objetivo, aporte e prazo — Guia do Investidor</title><link rel="stylesheet" href="style.css"></head>
+<title>Seu objetivo — Guia do Investidor</title><link rel="stylesheet" href="style.css"></head>
 <body><a class="skip" href="#conteudo">Pular para o conteúdo</a>
-<header><a class="brand" href="index.html"><img src="logo.svg" alt="" width="34" height="34"><span>Guia do <b>Investidor</b></span></a><nav aria-label="Principal"><ul><li><a href="04-questionario.html">Questionário</a></li><li><a href="10-minhas-carteiras.html">Minhas carteiras</a></li><li><a href="11-minha-conta.html">Minha conta</a></li><li><a href="01-login.html">Sair</a></li></ul></nav></header>
-<main id="conteudo"><ol class="steps" aria-label="Etapas"><li class="">1. Perfil</li><li class="on" aria-current="step">2. Objetivo</li><li class="">3. Carteira</li></ol><p class="rf">RFs desta tela: RF04</p>
-<section class="card"><h1>Seu objetivo</h1><p class="sub">Conte para que você quer investir, quanto aporta por mês e em quanto tempo.</p>
-<label for="obj">Objetivo financeiro</label><input type="text" id="obj" name="obj" value="Aposentadoria" class=""><label for="aporte">Aporte mensal (R$)</label><input type="number" id="aporte" name="aporte" value="1500" class=""><label for="prazo">Prazo (em meses)</label><input type="number" id="prazo" name="prazo" value="120" class="">
-<a class="btn" href="08-dashboard.html">Gerar carteira</a><a class="btn sec" href="07-objetivo-erro.html">Ver estado: erro</a></section><p class="aviso" role="note"><strong>Aviso:</strong> Conteúdo educacional; não é recomendação de investimento.</p></main>
-<footer>Protótipo S1 · Equipe GuiaInvest · DSW — UFMA · Dados de exemplo fixos.</footer><script src="app.js" defer></script></body></html>
+<header><a class="brand" href="index.html"><img src="logo.svg" alt="" width="34" height="34"><span>Guia do <b>Investidor</b></span></a><nav aria-label="Principal"><ul><li><span id="ola" class="ola"></span></li><li><a href="04-questionario.html">Questionário</a></li><li><a href="08-dashboard.html">Minha carteira</a></li><li><a href="10-minhas-carteiras.html">Minhas carteiras</a></li><li><a href="11-minha-conta.html">Minha conta</a></li><li><a href="01-login.html" data-sair>Sair</a></li></ul></nav></header>
+<main id="conteudo"><ol class="steps" aria-label="Etapas"><li>1. Perfil</li><li class="on" aria-current="step">2. Objetivo</li><li>3. Carteira</li></ol><p class="rf">RFs desta tela: RF04</p>
+<form class="card" id="form-objetivo" novalidate><h1>Seu objetivo</h1><p class="sub">Conte para que você quer investir, quanto aporta por mês e em quanto tempo.</p>
+<label for="obj">Objetivo financeiro</label><input type="text" id="obj" name="obj" placeholder="Ex.: Aposentadoria" required><label for="aporte">Aporte mensal (R$)</label><input type="number" id="aporte" name="aporte" min="0.01" step="0.01" inputmode="decimal" placeholder="Ex.: 1500" required><label for="prazo">Prazo (em meses)</label><input type="number" id="prazo" name="prazo" min="1" step="1" inputmode="numeric" placeholder="Ex.: 120" required>
+<button class="btn" type="submit">Gerar carteira</button><a class="btn sec" href="05-resultado-perfil.html">Voltar</a></form><p class="aviso" role="note"><strong>Aviso:</strong> Conteúdo educacional; não é recomendação de investimento.</p></main>
+<footer>Sprint 2 · Equipe GuiaInvest · DSW — UFMA · Os dados ficam guardados só neste navegador (localStorage).</footer>
+<script src="js/regras.js"></script><script src="js/dados.js"></script><script src="app.js"></script><script src="js/objetivo.js"></script></body></html>
