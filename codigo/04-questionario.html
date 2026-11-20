@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<!-- Protótipo Guia do Investidor (S1). Tela: Questionário de perfil. RFs atendidos: RF02. HTML e CSS; app.js só para efeitos visuais opcionais, sem lógica. -->
+<!-- Guia do Investidor — Sprint 2. Tela: Questionário de perfil. RFs atendidos: RF02, RF03. Lógica em JavaScript puro, dados no localStorage. -->
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Questionário de perfil — Guia do Investidor</title><link rel="stylesheet" href="style.css"></head>
 <body><a class="skip" href="#conteudo">Pular para o conteúdo</a>
-<header><a class="brand" href="index.html"><img src="logo.svg" alt="" width="34" height="34"><span>Guia do <b>Investidor</b></span></a><nav aria-label="Principal"><ul><li><a href="04-questionario.html">Questionário</a></li><li><a href="10-minhas-carteiras.html">Minhas carteiras</a></li><li><a href="11-minha-conta.html">Minha conta</a></li><li><a href="01-login.html">Sair</a></li></ul></nav></header>
-<main id="conteudo"><ol class="steps" aria-label="Etapas"><li class="on" aria-current="step">1. Perfil</li><li class="">2. Objetivo</li><li class="">3. Carteira</li></ol><p class="rf">RFs desta tela: RF02</p>
-<section class="card"><h1>Questionário de perfil</h1>
-<p id="prog">Pergunta 3 de 8</p><div class="prog" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="8" aria-labelledby="prog"><span></span></div>
-<fieldset><legend>Se seus investimentos caíssem 10% em um mês, o que você faria?</legend><div class="opt"><input type="radio" id="q30" name="q3"><label for="q30">Vender tudo para evitar mais perdas</label></div><div class="opt"><input type="radio" id="q31" name="q3"><label for="q31">Vender uma parte e esperar</label></div><div class="opt sel"><input type="radio" id="q32" name="q3" checked><label for="q32">Manter e aguardar a recuperação</label></div><div class="opt"><input type="radio" id="q33" name="q3"><label for="q33">Investir mais, aproveitando preços menores</label></div></fieldset>
-<p class="erro">Responda todas as perguntas para continuar.</p>
-<a class="btn sec" href="04-questionario.html">Anterior</a><a class="btn" href="05-resultado-perfil.html">Próxima / Finalizar</a></section><p class="aviso" role="note"><strong>Aviso:</strong> Conteúdo educacional; não é recomendação de investimento.</p></main>
-<footer>Protótipo S1 · Equipe GuiaInvest · DSW — UFMA · Dados de exemplo fixos.</footer><script src="app.js" defer></script></body></html>
+<header><a class="brand" href="index.html"><img src="logo.svg" alt="" width="34" height="34"><span>Guia do <b>Investidor</b></span></a><nav aria-label="Principal"><ul><li><span id="ola" class="ola"></span></li><li><a href="04-questionario.html">Questionário</a></li><li><a href="08-dashboard.html">Minha carteira</a></li><li><a href="10-minhas-carteiras.html">Minhas carteiras</a></li><li><a href="11-minha-conta.html">Minha conta</a></li><li><a href="01-login.html" data-sair>Sair</a></li></ul></nav></header>
+<main id="conteudo"><ol class="steps" aria-label="Etapas"><li class="on" aria-current="step">1. Perfil</li><li>2. Objetivo</li><li>3. Carteira</li></ol><p class="rf">RFs desta tela: RF02, RF03</p>
+<form class="card" id="form-quest" novalidate><h1>Questionário de perfil</h1>
+<p id="prog" aria-live="polite">Pergunta 1 de 8</p><div class="prog" id="barra" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="8" aria-labelledby="prog"><span></span></div>
+<fieldset id="pergunta"></fieldset>
+<p class="erro" id="quest-erro" role="alert" hidden>Escolha uma opção para continuar. Todas as perguntas devem ser respondidas.</p>
+<button class="btn sec" type="button" id="anterior">Anterior</button><button class="btn" type="submit" id="proxima">Próxima</button></form><p class="aviso" role="note"><strong>Aviso:</strong> Conteúdo educacional; não é recomendação de investimento.</p></main>
+<footer>Sprint 2 · Equipe GuiaInvest · DSW — UFMA · Os dados ficam guardados só neste navegador (localStorage).</footer>
+<script src="js/regras.js"></script><script src="js/dados.js"></script><script src="app.js"></script><script src="js/questionario.js"></script></body></html>
