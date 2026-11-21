@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- Protótipo Guia do Investidor (S1). Tela: Confirmar exclusão da conta. RFs atendidos: RF12. HTML e CSS; app.js só para efeitos visuais opcionais, sem lógica. -->
+<!-- Guia do Investidor — Sprint 2 (tela ainda do protótipo S1; lógica prevista para a S3). Tela: Confirmar exclusão da conta. RFs atendidos: RF12. Dados de exemplo fixos. -->
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Confirmar exclusão da conta — Guia do Investidor</title><link rel="stylesheet" href="style.css"></head>
 <body><a class="skip" href="#conteudo">Pular para o conteúdo</a>
-<header><a class="brand" href="index.html"><img src="logo.svg" alt="" width="34" height="34"><span>Guia do <b>Investidor</b></span></a><nav aria-label="Principal"><ul><li><a href="04-questionario.html">Questionário</a></li><li><a href="10-minhas-carteiras.html">Minhas carteiras</a></li><li><a href="11-minha-conta.html">Minha conta</a></li><li><a href="01-login.html">Sair</a></li></ul></nav></header>
-<main id="conteudo"><p class="rf">RFs desta tela: RF12</p>
+<header><a class="brand" href="index.html"><img src="logo.svg" alt="" width="34" height="34"><span>Guia do <b>Investidor</b></span></a><nav aria-label="Principal"><ul><li><span id="ola" class="ola"></span></li><li><a href="04-questionario.html">Questionário</a></li><li><a href="08-dashboard.html">Minha carteira</a></li><li><a href="10-minhas-carteiras.html">Minhas carteiras</a></li><li><a href="11-minha-conta.html">Minha conta</a></li><li><a href="01-login.html" data-sair>Sair</a></li></ul></nav></header>
+<main id="conteudo"><p class="rf">RFs desta tela: RF12</p><p class="info prev">Prévia do protótipo (S1), com dados de exemplo. Esta função será implementada na Sprint 3.</p>
 <section class="card"><h1>Excluir minha conta?</h1><p class="alerta" role="alert">Sua conta, perfil, objetivos e carteiras serão apagados. Depois disso, não será possível entrar com este e-mail.</p>
-<a class="btn perigo" href="01-login.html">Confirmar exclusão</a><a class="btn sec" href="11-minha-conta.html">Cancelar</a></section><p class="aviso" role="note"><strong>Aviso:</strong> Conteúdo educacional; não é recomendação de investimento.</p></main>
-<footer>Protótipo S1 · Equipe GuiaInvest · DSW — UFMA · Dados de exemplo fixos.</footer><script src="app.js" defer></script></body></html>
+<a class="btn perigo" href="11-minha-conta.html">Confirmar exclusão</a><a class="btn sec" href="11-minha-conta.html">Cancelar</a></section><p class="aviso" role="note"><strong>Aviso:</strong> Conteúdo educacional; não é recomendação de investimento.</p></main>
+<footer>Sprint 2 · Equipe GuiaInvest · DSW — UFMA · Tela de prévia com dados de exemplo fixos.</footer><script src="js/regras.js"></script><script src="js/dados.js"></script><script src="app.js"></script><script src="js/prototipo.js"></script></body></html>
