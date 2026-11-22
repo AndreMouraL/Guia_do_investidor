@@ -55,4 +55,24 @@ teste('RF05: prazo curto deixa a carteira mais segura', () => {
 teste('moeda: 1500 = "R$ 1.500,00"', () => {
   assert.strictEqual(R.moeda(1500), 'R$ 1.500,00');
 });
+teste('RF04: rejeita prazo decimal, aporte infinito e campos ausentes', () => {
+  const e1 = R.validarObjetivo({ objetivo: 'Viagem', aporte: 'Infinity', prazo: '12.5' });
+  assert.ok(e1.aporte);
+  assert.ok(e1.prazo);
+  const e2 = R.validarObjetivo({});
+  assert.ok(e2.objetivo && e2.aporte && e2.prazo);
+});
+teste('RF05: ajuste de centavos incide na maior classe do perfil Arrojado', () => {
+  const c = R.gerarCarteira('Arrojado', 100.01, 120);
+  assert.strictEqual(Math.round(c.itens.reduce((s, i) => s + i.valor * 100, 0)), 10001);
+  // Maior classe de Arrojado é Ações brasileiras (35%, índice 3)
+  assert.strictEqual(c.itens[0].valor, 15);
+  assert.strictEqual(c.itens[3].valor, 35.01);
+});
+teste('RF05: fronteiras exatas de prazo (24, 25, 60, 61 meses)', () => {
+  assert.strictEqual(R.perfilParaCarteira('Arrojado', 24), 'Conservador');
+  assert.strictEqual(R.perfilParaCarteira('Arrojado', 25), 'Moderado');
+  assert.strictEqual(R.perfilParaCarteira('Arrojado', 60), 'Moderado');
+  assert.strictEqual(R.perfilParaCarteira('Arrojado', 61), 'Arrojado');
+});
 console.log(`\n${ok} testes passaram.`);

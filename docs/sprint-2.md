@@ -32,7 +32,7 @@ Conta da meta: essenciais funcionando = 7 de 7 = 100% (mínimo da sprint: 25% de
 | RF06 | Abrir o dashboard; mouse/Tab nas linhas | Indicadores, rosca e tabela coerentes; linha realça o gráfico | ok |
 | RF13 | Percorrer todas as telas | Aviso educacional visível | ok |
 
-Testes automáticos das regras: `node testes/regras.test.js` (10 testes passando).
+Testes automáticos das regras: `node testes/regras.test.js` (13 testes passando).
 
 ## 3. O que a equipe aprendeu
 

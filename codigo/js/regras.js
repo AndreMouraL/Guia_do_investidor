@@ -73,13 +73,16 @@
 
   /** RF04: valida os dados do objetivo. Devolve um objeto com as mensagens de erro (vazio = válido). */
   function validarObjetivo(dados) {
+    dados = dados || {};
     var erros = {};
-    var objetivo = String(dados.objetivo || '').trim();
-    var aporte = Number(String(dados.aporte).replace(',', '.'));
-    var prazo = Number(dados.prazo);
+    var objetivo = String(dados.objetivo == null ? '' : dados.objetivo).trim();
+    var aporteTxt = String(dados.aporte == null ? '' : dados.aporte).trim();
+    var prazoTxt = String(dados.prazo == null ? '' : dados.prazo).trim();
+    var aporte = Number(aporteTxt.replace(',', '.'));
+    var prazo = Number(prazoTxt);
     if (!objetivo) erros.objetivo = 'Informe o seu objetivo.';
-    if (String(dados.aporte).trim() === '' || isNaN(aporte) || aporte <= 0) erros.aporte = 'O aporte deve ser maior que zero.';
-    if (String(dados.prazo).trim() === '' || isNaN(prazo) || prazo <= 0 || Math.floor(prazo) !== prazo) {
+    if (aporteTxt === '' || !isFinite(aporte) || aporte <= 0) erros.aporte = 'O aporte deve ser maior que zero.';
+    if (prazoTxt === '' || !isFinite(prazo) || prazo <= 0 || Math.floor(prazo) !== prazo) {
       erros.prazo = 'Informe o prazo em meses (número inteiro maior que zero).';
     }
     return erros;
@@ -108,7 +111,13 @@
     // Ajusta o arredondamento de centavos na maior classe, para o total bater com o aporte.
     var soma = itens.reduce(function (s, it) { return s + Math.round(it.valor * 100); }, 0);
     var dif = Math.round(aporte * 100) - soma;
-    if (dif !== 0) itens[0].valor = (Math.round(itens[0].valor * 100) + dif) / 100;
+    if (dif !== 0) {
+      var maiorIdx = 0;
+      for (var k = 1; k < itens.length; k++) {
+        if (itens[k].percentual > itens[maiorIdx].percentual) maiorIdx = k;
+      }
+      itens[maiorIdx].valor = (Math.round(itens[maiorIdx].valor * 100) + dif) / 100;
+    }
     return { perfilUsado: usado, ajustadoPeloPrazo: usado !== classe, itens: itens };
   }
 
