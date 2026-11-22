@@ -52,7 +52,8 @@
   el('t-corpo').innerHTML = linhas;
 
   // Como as regras chegaram a esta carteira
-  var regra = 'Pontuação ' + u.perfil.pontos + ' (' + u.perfil.classe + ') e prazo de ' + o.prazo + ' meses: ';
+  var prazoTxt = o.prazo + (o.prazo === 1 ? ' mês' : ' meses');
+  var regra = 'Pontuação ' + u.perfil.pontos + ' (' + u.perfil.classe + ') e prazo de ' + prazoTxt + ': ';
   if (!cart.ajustadoPeloPrazo) regra += 'vale a carteira do perfil calculado.';
   else regra += 'como o prazo é curto, usamos a carteira ' + FEM[cart.perfilUsado] +
     ' (até 24 meses: Conservadora; de 25 a 60 meses: no máximo Moderada).';

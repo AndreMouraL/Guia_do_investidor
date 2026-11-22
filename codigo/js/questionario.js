@@ -5,9 +5,10 @@
  */
 (function () {
   'use strict';
-  if (!Dados.exigirLogin()) return;
+  var u = Dados.exigirLogin();
+  if (!u) return;
 
-  var CHAVE = 'gi_respostas';
+  var CHAVE = 'gi_respostas_' + u.email;
   var P = Regras.PERGUNTAS;
   var estado;
   try { estado = JSON.parse(sessionStorage.getItem(CHAVE)); } catch (e) { estado = null; }
