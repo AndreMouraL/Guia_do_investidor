@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!-- Guia do Investidor — Sprint 2. Tela: Cadastro (com estado de erro). RFs atendidos: RF01. Lógica em JavaScript puro, dados no localStorage. -->
+<!-- Guia do Investidor — Sprint 3. Tela: Cadastro (acessibilidade e estados). RFs atendidos: RF01. Lógica em JavaScript puro, dados no localStorage. -->
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Criar conta — Guia do Investidor</title><link rel="stylesheet" href="style.css"></head>
 <body><a class="skip" href="#conteudo">Pular para o conteúdo</a>
 <header><a class="brand" href="index.html"><img src="logo.svg" alt="" width="34" height="34"><span>Guia do <b>Investidor</b></span></a><nav class="nav-pub" aria-label="Principal"><ul><li><a href="index.html">Início</a></li><li><a href="01-login.html">Entrar</a></li><li><a href="02-cadastro.html" class="cta">Criar conta</a></li></ul></nav></header>
 <main id="conteudo" class="auth"><img class="logo-big" src="logo.svg" alt="Símbolo do Guia do Investidor" width="64" height="64"><p class="rf">RFs desta tela: RF01</p>
 <form class="card" id="form-cadastro" novalidate><h1>Criar conta</h1><p class="sub">Informe nome, e-mail e uma senha com 8 ou mais caracteres.</p>
-<label for="nome">Nome</label><input type="text" id="nome" name="nome" autocomplete="name" required><label for="email">E-mail</label><input type="email" id="email" name="email" autocomplete="email" required><label for="senha">Senha (mínimo 8 caracteres)</label><input type="password" id="senha" name="senha" autocomplete="new-password" minlength="8" required>
-<button class="btn" type="submit">Cadastrar</button><a class="btn sec" href="01-login.html">Já tenho conta</a></form><p class="aviso" role="note"><strong>Aviso:</strong> Conteúdo educacional; não é recomendação de investimento.</p></main>
-<footer>Sprint 2 · Equipe GuiaInvest · DSW — UFMA · Os dados ficam guardados só neste navegador (localStorage).</footer>
+<label for="nome">Nome</label><input type="text" id="nome" name="nome" autocomplete="name" required><label for="email">E-mail</label><input type="email" id="email" name="email" autocomplete="email" required><label for="senha">Senha (mínimo 8 caracteres)</label><input type="password" id="senha" name="senha" autocomplete="new-password" minlength="8" aria-describedby="dica-senha" required><small id="dica-senha" class="dica-campo">Use pelo menos 8 caracteres.</small>
+<button id="btn-cadastrar" class="btn" type="submit">Cadastrar</button><button class="btn sec" type="button" onclick="location.href='01-login.html'">Já tenho conta</button></form><p class="aviso" role="note"><strong>Aviso:</strong> Conteúdo educacional; não é recomendação de investimento.</p></main>
+<footer>Sprint 3 · Equipe GuiaInvest · DSW — UFMA · Os dados ficam guardados só neste navegador (localStorage).</footer>
 <script src="js/regras.js"></script><script src="js/dados.js"></script><script src="app.js"></script><script src="js/auth.js"></script></body></html>
